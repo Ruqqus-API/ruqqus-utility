@@ -1,2 +1,2 @@
-# ruqqus-utility
+## Utility
 The unofficial Ruqqus utility bot.
