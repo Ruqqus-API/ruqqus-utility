@@ -1,0 +1,16 @@
+{
+  "name": "utility",
+  "version": "1.0.0",
+  "description": "The unofficial Ruqqus utility bot.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "acikek",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "edit-json-file": "^1.5.0",
+    "ruqqus-js": "^3.5.1"
+  }
+}
