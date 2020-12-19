@@ -32,7 +32,7 @@ module.exports = {
         .setTimestamp()
         .addFields([
           { name: "Description", value: command.description },
-          { name: "Usage", value: `${config.prefix}${command.usage}` },
+          { name: "Usage", value: `${command.usage}` },
           { name: "Admin-only", value: command.admin ? "True" : "False" }
         ]);
 

@@ -13,44 +13,44 @@ module.exports = {
     fields = [
       { 
         name: "Info", value: `
-        Comment ID: \`${comment.id} (${comment.full_id})\`
-        Created At: \`${new Date(comment.created_at * 1000).toLocaleString("en-US")}\`
-        Edited At: \`${comment.edited_at > 0 ? new Date(comment.edited_at * 1000).toLocaleString("en-US") : "Never"}\``
+Comment ID: \`${comment.id} (${comment.full_id})\`
+Created At: \`${new Date(comment.created_at * 1000).toLocaleString("en-US")}\`
+Edited At: \`${comment.edited_at > 0 ? new Date(comment.edited_at * 1000).toLocaleString("en-US") : "Never"}\``
       },
       {
         name: "Author", value: `
-        Name: \`${comment.author.username}\`
-        User ID: \`${comment.author.id} (${comment.author.full_id})\`
-        Created At: \`${new Date(comment.author.created_at * 1000).toLocaleString("en-US")}\``
+Name: \`${comment.author.username}\`
+User ID: \`${comment.author.id} (${comment.author.full_id})\`
+Created At: \`${new Date(comment.author.created_at * 1000).toLocaleString("en-US")}\``
       },
       {
         name: "Stats", value: `
-        Score: \`${comment.votes.score}\`
-        Chain Level: \`${comment.chain_level}\`
-        Award Count: \`${comment.awards}\``
+Score: \`${comment.votes.score}\`
+Chain Level: \`${comment.chain_level}\`
+Award Count: \`${comment.awards}\``
       },
       {
         name: "Flags", value: `
-        Is Archived: \`${comment.flags.archived}\`
-        Is Banned: \`${comment.flags.banned}\`
-        Is Deleted: \`${comment.flags.deleted}\`
-        Is NSFW: \`${comment.flags.nsfw}\`
-        Is NSFL: \`${comment.flags.nsfl}\`
-        Is Offensive: \`${comment.flags.offensive}\`
-        Is Bot: \`${comment.flags.bot}\``
+Is Archived: \`${comment.flags.archived}\`
+Is Banned: \`${comment.flags.banned}\`
+Is Deleted: \`${comment.flags.deleted}\`
+Is NSFW: \`${comment.flags.nsfw}\`
+Is NSFL: \`${comment.flags.nsfl}\`
+Is Offensive: \`${comment.flags.offensive}\`
+Is Bot: \`${comment.flags.bot}\``
       },
       {
         name: "Post", value: `
-        Title: \`${comment.post.content.title}\`
-        Author Name: \`${comment.post.author_name}\`
-        Post ID: \`${comment.post.id} (${comment.post.full_id})\`
-        Created At: \`${new Date(comment.post.created_at * 1000).toLocaleString("en-US")}\``
+Title: \`${comment.post.content.title}\`
+Author Name: \`${comment.post.author_name}\`
+Post ID: \`${comment.post.id} (${comment.post.full_id})\`
+Created At: \`${new Date(comment.post.created_at * 1000).toLocaleString("en-US")}\``
       },
       {
         name: "Guild", value: `
-        Name: \`${comment.guild.name}\`
-        Guild ID: \`${comment.guild.id} (${comment.guild.full_id})\`
-        Created At: \`${new Date(comment.guild.created_at * 1000).toLocaleString("en-US")}\``
+Name: \`${comment.guild.name}\`
+Guild ID: \`${comment.guild.id} (${comment.guild.full_id})\`
+Created At: \`${new Date(comment.guild.created_at * 1000).toLocaleString("en-US")}\``
       }
     ]
 

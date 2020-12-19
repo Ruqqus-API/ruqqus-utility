@@ -1,3 +1,5 @@
+const data = require("../data.js");
+
 module.exports = {
   name: "eval",
   description: "Evaluates an input.",

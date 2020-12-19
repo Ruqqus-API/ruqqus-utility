@@ -14,39 +14,39 @@ module.exports = {
       fields = [
         {
           name: "Info", value: `
-          **User ID**: \`${user.id} (t1_${user.id})\`
-          **Ban Reason**: \`${user.ban_reason}\``
+User ID: \`${user.id} (t1_${user.id})\`
+Ban Reason: \`${user.ban_reason}\``
         }
       ]
     } else if (user.deleted) {
       fields = [
         {
           name: "Info", value: `
-          **User ID**: \`${user.id} (t1_${user.id})\`
-          **Deleted**: \`${user.deleted}\``
+User ID: \`${user.id} (t1_${user.id})\`
+Deleted: \`${user.deleted}\``
         }
       ]
     } else {
       fields = [
         { 
           name: "Info", value: `
-          Name: \`${user.username}\`
-          Title: \`${user.title ? user.title.name.replace(",", " ").trim() + ` (${user.title.color.toUpperCase()})` : "None"}\`
-          User ID: \`${user.id} (${user.full_id})\`
-          Created At: \`${new Date(user.created_at * 1000).toLocaleString("en-US")}\``
-        },
-        {
-          name: "Stats", value: `
-          Post Count: \`${user.stats.posts}\`
-          Post Rep: \`${user.stats.post_rep}\`
-          Comment Count: \`${user.stats.comments}\`
-          Comment Rep: \`${user.stats.comment_rep}\``
+Name: \`${user.username}\`
+Title: \`${user.title ? user.title.name.replace(",", " ").trim() + ` (${user.title.color.toUpperCase()})` : "None"}\`
+User ID: \`${user.id} (${user.full_id})\`
+Created At: \`${new Date(user.created_at * 1000).toLocaleString("en-US")}\``
+      },
+      {
+        name: "Stats", value: `
+Post Count: \`${user.stats.posts}\`
+Post Rep: \`${user.stats.post_rep}\`
+Comment Count: \`${user.stats.comments}\`
+Comment Rep: \`${user.stats.comment_rep}\``
         },
         {
           name: "Flags", value: `
-          Is Banned: \`${user.flags.banned}\`
-          Is Private: \`${user.flags.private}\`
-          Is Premium: \`${user.flags.premium}\``
+Is Banned: \`${user.flags.banned}\`
+Is Private: \`${user.flags.private}\`
+Is Premium: \`${user.flags.premium}\``
         },
         {
           name: `Badges (${user.badges.length})`, value: user.badges.length > 0 ? user.badges.map(b => b.name).join(", ") : "None"

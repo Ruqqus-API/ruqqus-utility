@@ -13,21 +13,21 @@ module.exports = {
     fields = [
       { 
         name: "Info", value: `
-        Name: \`${guild.name}\`
-        Guild ID: \`${guild.id} (${guild.full_id})\`
-        Created At: \`${new Date(guild.created_at * 1000).toLocaleString("en-US")}\``
+Name: \`${guild.name}\`
+Guild ID: \`${guild.id} (${guild.full_id})\`
+Created At: \`${new Date(guild.created_at * 1000).toLocaleString("en-US")}\``
       },
       {
         name: "Stats", value: `
-        Subscribers: \`${guild.subscribers}\``
+Subscribers: \`${guild.subscribers}\``
       },
       {
         name: "Flags", value: `
-        Is Banned: \`${guild.flags.banned}\`
-        Is Private: \`${guild.flags.private}\`
-        Is Restricted: \`${guild.flags.restricted}\`
-        Is Age Restricted: \`${guild.flags.age_restricted}\`
-        Is Siege Protected: \`${guild.flags.siege_protected}\``
+Is Banned: \`${guild.flags.banned}\`
+Is Private: \`${guild.flags.private}\`
+Is Restricted: \`${guild.flags.restricted}\`
+Is Age Restricted: \`${guild.flags.age_restricted}\`
+Is Siege Protected: \`${guild.flags.siege_protected}\``
       },
       {
         name: `Guildmasters (${guild.guildmasters.length})`, value: guild.guildmasters.length > 0 ? guild.guildmasters.map(g => g.username).join(", ") : "None"
@@ -39,10 +39,13 @@ module.exports = {
       .setURL(guild.full_link)
       .addFields(fields)
       .setColor(guild.color || "#805AD5")
-      .setImage(guild.banner_url)
-      .setThumbnail(guild.icon_url)
       .setFooter(`Requested by ${m.author.tag}`, m.author.avatarURL())
       .setTimestamp();
+    
+    if (!guild.flags.age_restricted) {
+      embed.setImage(guild.banner_url);
+      embed.setThumbnail(guild.icon_url);
+    }
 
     m.channel.send(embed);
   }

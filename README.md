@@ -4,7 +4,7 @@ The unofficial Ruqqus utility bot.
 ### Features
 - Discord Client:
   - Info commands (Guild, Post, Comment, User)
-  - Guild post logging
+  - Guild post logging/notifying
   - Help implementation
   - Work in progress!
 - Ruqqus Client:

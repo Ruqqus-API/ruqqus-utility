@@ -8,6 +8,7 @@ module.exports = {
   run() {
     client.on("post", post => {
       require("./logger.js")(post);
+      require("./notifier.js")(post);
     });
   }
 }
