@@ -3,7 +3,7 @@ const data = require("../data.js");
 module.exports = {
   name: "eval",
   description: "Evaluates an input.",
-  usage: "`;eval <input>`",
+  usage: "eval <input>",
   admin: true,
   execute(m, client, ruqqus) {
     if (m.author.id != "421783398374440961") return;

@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports = {
   name: "loglist",
   description: "Returns a list of the current channel's loggers.",
-  usage: "`;loglist`",
+  usage: "loglist",
   async execute(m, client) {
     let webhooks = await m.channel.fetchWebhooks(); 
     webhooks = webhooks.array().filter(w => w.name.startsWith("UtilityLogger/") && w.owner.id == client.user.id);

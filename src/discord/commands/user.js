@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports = {
   name: "user",
-  usage: "`;user <username>`",
+  usage: "user <username>",
   description: "Returns the data of a specified user.",
   async execute(m, client, ruqqus) {
     if (!m.args[1]) return m.channel.send("**Command Error** | No user provided.");

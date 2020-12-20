@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports = {
   name: "comment",
   description: "Returns the data of a specified comment.",
-  usage: "`;comment <id>`",
+  usage: "comment <id>",
   async execute(m, client, ruqqus) {
     if (!m.args[1]) return m.channel.send("**Command Error** | No comment provided.");
 

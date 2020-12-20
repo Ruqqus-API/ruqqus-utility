@@ -3,7 +3,7 @@ const data = require("../data.js");
 module.exports = {
   name: "notify",
   description: "Toggles the guild post notifier for your user.",
-  usage: "`;notify (<guild>)`",
+  usage: "notify (<guild>)",
   async execute(m, client, ruqqus) {
     if (!m.args[1]) return m.channel.send("**Command Error** | No guild provided.");
 

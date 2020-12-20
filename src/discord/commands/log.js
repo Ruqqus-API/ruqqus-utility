@@ -3,7 +3,7 @@ const data = require("../data.js");
 module.exports = {
   name: "log",
   description: "Toggles the guild post logger in a channel.",
-  usage: "`;log (<guildName>)`",
+  usage: "log (<guildName>)",
   async execute(m, client, ruqqus) {
     let authorMember = await m.guild.members.fetch(m.author.id);
     if (!authorMember.hasPermission("MANAGE_CHANNELS")) return m.channel.send("**User Error** | Missing `MANAGE_CHANNELS` permission.");

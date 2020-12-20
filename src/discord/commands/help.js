@@ -5,7 +5,7 @@ const config = require("../config.json");
 module.exports = {
   name: "help",
   description: "Returns the list of commands or a command's usage.",
-  usage: "`;help (<command>)`",
+  usage: "help (<command>)",
   execute(m) {
     if (!m.args[1] || m.args[1] == " ") {
       let commands = fs.readdirSync(__dirname).filter(f => f.endsWith(".js")).map(c => { let file = require(`./${c}`); return { name: file.name, description: file.description }});
@@ -32,7 +32,7 @@ module.exports = {
         .setTimestamp()
         .addFields([
           { name: "Description", value: command.description },
-          { name: "Usage", value: `${command.usage}` },
+          { name: "Usage", value: `\`${m.prefix}${command.usage}\`` },
           { name: "Admin-only", value: command.admin ? "True" : "False" }
         ]);
 

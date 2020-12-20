@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports = {
   name: "post",
-  usage: ";post <id>",
+  usage: "post <id>",
   description: "Returns the data of a specified post.",
   async execute(m, client, ruqqus) {
     if (!m.args[1]) return m.channel.send("**Command Error** | No post provided.");

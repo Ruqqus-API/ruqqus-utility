@@ -14,9 +14,11 @@ module.exports = {
 
     client.on("message", m => {
       if (m.author.bot) return;
-      if (!m.content.startsWith(config.prefix)) return;
 
-      m.args = m.content.slice(config.prefix.length).split(" "); // The real arguments (including the prefix)
+      m.prefix = require("./prefix-handler")(m);
+      if (!m.content.startsWith(m.prefix) && !m.content.startsWith(`<@!${client.user.id}> `)) return;
+
+      m.args = m.content.slice(m.content.startsWith(m.prefix) ? m.prefix.length : `<@!${client.user.id}> `.length).split(" "); // The real arguments (including the prefix)
       m.command = m.args[0].toLowerCase(); // The command (joined with prefix, but prefix not included)
       m.input = m.args.slice(1).join(" "); // The inputs after the command
 
