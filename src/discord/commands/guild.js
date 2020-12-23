@@ -24,7 +24,7 @@ Ban Reason: \`${guild.ban_reason}\``
           name: "Info", value: `
 Name: \`${guild.name}\`
 Guild ID: \`${guild.id} (${guild.full_id})\`
-Created At: \`${new Date(guild.created_at * 1000).toLocaleString("en-US")}\``
+Created At: \`${new Date(guild.created_at * 1000).toUTCString()}\``
         },
         {
           name: "Stats", value: `

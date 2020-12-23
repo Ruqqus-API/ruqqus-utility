@@ -1,3 +1,4 @@
+const Discord = require("discord.js");
 const data = require("../data.js");
 
 module.exports = {
@@ -18,7 +19,7 @@ module.exports = {
       color = 16711680;
     }
 
-    let embed = new (require("discord.js")).MessageEmbed()
+    let embed = new Discord.MessageEmbed()
       .setColor(color)
       .addFields(
         { name: "Input 📥", value: `\`\`\`js\n${m.input}\n\`\`\`` },

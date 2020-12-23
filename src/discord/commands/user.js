@@ -33,7 +33,7 @@ Deleted: \`${user.deleted}\``
 Name: \`${user.username}\`
 Title: \`${user.title ? user.title.name.replace(",", " ").trim() + ` (${user.title.color.toUpperCase()})` : "None"}\`
 User ID: \`${user.id} (${user.full_id})\`
-Created At: \`${new Date(user.created_at * 1000).toLocaleString("en-US")}\``
+Created At: \`${new Date(user.created_at * 1000).toUTCString()}\``
       },
       {
         name: "Stats", value: `

@@ -16,15 +16,15 @@ module.exports = {
 Domain: \`${post.content.domain}\`
 URL: \`${post.content.url}\`
 Post ID: \`${post.id} (${post.full_id})\`
-Created At: \`${new Date(post.created_at * 1000).toLocaleString("en-US")}\`
-Edited At: \`${post.edited_at > 0 ? new Date(post.edited_at * 1000).toLocaleString("en-US") : "Never"}\`
+Created At: \`${new Date(post.created_at * 1000).toUTCString()}\`
+Edited At: \`${post.edited_at > 0 ? new Date(post.edited_at * 1000).toUTCString() : "Never"}\`
 Original Guild: \`${post.original_guild ? post.original_guild.name : "None"}\``
       },
       {
         name: "Author", value: `
 Name: \`${post.author.username}\`
 User ID: \`${post.author.id} (${post.author.full_id})\`
-Created At: \`${new Date(post.author.created_at * 1000).toLocaleString("en-US")}\``
+Created At: \`${new Date(post.author.created_at * 1000).toUTCString()}\``
       },
       {
         name: "Stats", value: `
@@ -47,7 +47,7 @@ Is Yanked: \`${post.flags.yanked}\``
         name: "Guild", value: `
 Name: \`${post.guild.name}\`
 Guild ID: \`${post.guild.id} (${post.guild.full_id})\`
-Created At: \`${new Date(post.guild.created_at * 1000).toLocaleString("en-US")}\``
+Created At: \`${new Date(post.guild.created_at * 1000).toUTCString()}\``
       }
     ]
 

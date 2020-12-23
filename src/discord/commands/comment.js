@@ -14,14 +14,14 @@ module.exports = {
       { 
         name: "Info", value: `
 Comment ID: \`${comment.id} (${comment.full_id})\`
-Created At: \`${new Date(comment.created_at * 1000).toLocaleString("en-US")}\`
-Edited At: \`${comment.edited_at > 0 ? new Date(comment.edited_at * 1000).toLocaleString("en-US") : "Never"}\``
+Created At: \`${new Date(comment.created_at * 1000).toUTCString()}\`
+Edited At: \`${comment.edited_at > 0 ? new Date(comment.edited_at * 1000).toUTCString() : "Never"}\``
       },
       {
         name: "Author", value: `
 Name: \`${comment.author.username}\`
 User ID: \`${comment.author.id} (${comment.author.full_id})\`
-Created At: \`${new Date(comment.author.created_at * 1000).toLocaleString("en-US")}\``
+Created At: \`${new Date(comment.author.created_at * 1000).toUTCString()}\``
       },
       {
         name: "Stats", value: `
@@ -44,13 +44,13 @@ Is Bot: \`${comment.flags.bot}\``
 Title: \`${comment.post.content.title}\`
 Author Name: \`${comment.post.author_name}\`
 Post ID: \`${comment.post.id} (${comment.post.full_id})\`
-Created At: \`${new Date(comment.post.created_at * 1000).toLocaleString("en-US")}\``
+Created At: \`${new Date(comment.post.created_at * 1000).toUTCString()}\``
       },
       {
         name: "Guild", value: `
 Name: \`${comment.guild.name}\`
 Guild ID: \`${comment.guild.id} (${comment.guild.full_id})\`
-Created At: \`${new Date(comment.guild.created_at * 1000).toLocaleString("en-US")}\``
+Created At: \`${new Date(comment.guild.created_at * 1000).toUTCString()}\``
       }
     ]
 
@@ -63,10 +63,12 @@ Created At: \`${new Date(comment.guild.created_at * 1000).toLocaleString("en-US"
       .setFooter(`Requested by ${m.author.tag}`, m.author.avatarURL())
       .setTimestamp();
 
-    if (comment.parent) embed.addField("Parent Comment", `Parent Body: \`${comment.parent.content.text.slice(0, 100).trim()}${comment.parent.content.text.length > 100 ? "..." : ""}\`
-      Parent ID: \`${comment.parent.id} (${comment.parent.full_id})\`
-      Created At: \`${new Date(comment.parent.created_at * 1000).toLocaleString("en-US")}\`
-      Edited At: \`${comment.parent.edited_at > 0 ? new Date(comment.parent.edited_at * 1000).toLocaleString("en-US") : "Never"}\``);
+    if (comment.parent) embed.addField("Parent Comment", `
+Parent Body: \`${comment.parent.content.text.slice(0, 100).trim()}${comment.parent.content.text.length > 100 ? "..." : ""}\`
+Author Name: \`${comment.parent.author_name}\`
+Parent ID: \`${comment.parent.id} (${comment.parent.full_id})\`
+Created At: \`${new Date(comment.parent.created_at * 1000).toUTCString()}\`
+Edited At: \`${comment.parent.edited_at > 0 ? new Date(comment.parent.edited_at * 1000).toUTCString() : "Never"}\``);
 
     m.channel.send(embed);
   }
